@@ -21,6 +21,7 @@ describe Hive do
   end
 
   context '#ring_number' do
+    it {Hive.ring_number(1).should be_zero}
     it {Hive.ring_number(6).should eq(1)}
     it {Hive.ring_number(70).should eq(5)}
   end
@@ -31,6 +32,7 @@ describe Hive do
   end
 
   context '#anchor_coords' do
+    it {Hive.anchor_coords(0).should eq([0,  0])}
     it {Hive.anchor_coords(1).should eq([0, -1])}
     it {Hive.anchor_coords(4).should eq([3, -2])}
   end

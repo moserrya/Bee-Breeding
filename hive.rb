@@ -1,6 +1,3 @@
-# To find the distance between two cells:
-# Hive.len_shortest_path cell1, cell2
-
 module Hive
   extend self
 
@@ -19,8 +16,7 @@ module Hive
   end
 
   def coords(cell)
-    return [0, 0] if cell == 1
-    [get_x(cell), get_y(cell)]
+    cell == 1 ? [0, 0] : [get_x(cell), get_y(cell)]
   end
 
   def ring_number(cell)
@@ -30,8 +26,7 @@ module Hive
   end
 
   def anchor_coords(ring)
-    return [0, 0] if ring.zero?
-    [ring - 1, -ring / 2]
+    ring.zero? ? [0, 0] : [ring - 1, -ring / 2]
   end
 
   def anchor_cell(ring)
